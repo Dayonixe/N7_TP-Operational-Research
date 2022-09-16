@@ -1,0 +1,7 @@
+Maximize
+ Benefice: 8 A + 5 T
+
+Subject To
+ t
+
+End

@@ -1,0 +1,10 @@
+Minimize
+ Depense: 10 I1 + 20 I2
+
+Subject To
+ QA: 0.5 I1 + 0.4 I2 >= 0.5
+ QB: 0.15 I1 + 0.05 I2 >= 0.1
+ QC: 0.02 I1 >= 0.005
+ QMC: 0.02 I1 <= 0.015
+
+End

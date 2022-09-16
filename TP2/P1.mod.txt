@@ -1,0 +1,58 @@
+#  GLPK model file created by SUN for OptCombAII 
+
+
+###############################  Model ###############################
+
+
+
+###############################  Sets  ###############################
+
+set INTERIMAIRES;
+	
+set POSTES;	
+
+################### Variables ###################
+
+var X{i in INTERIMAIRES, j in POSTES}, >=0, binary; 
+# or binary ?; 
+
+###################  Constants: Data to load   #########################
+
+param cout{i in INTERIMAIRES, j in POSTES}, integer; 
+
+################### Constraints ###################
+
+
+s.t. PersMaxparPOSTE{j in POSTES}:
+  sum{i in INTERIMAIRES} X[i,j] = 1;
+
+s.t. POSTEMaxparPers{i in INTERIMAIRES}:
+  sum{j in POSTES} X[i,j] = 1;
+
+###### Objective ######
+
+minimize CoutdeFormation: 
+		sum{i in INTERIMAIRES, j in POSTES} X[i,j]*cout[i,j]; 
+
+
+end;
+
+
+#default data
+
+data;
+
+set POSTES := 
+1
+2;
+
+set INTERIMAIRES :=
+A
+B;
+
+param cout: 1 2 :=
+A 94 74
+B 1 10;
+
+
+end;

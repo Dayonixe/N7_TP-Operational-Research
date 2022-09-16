@@ -1,0 +1,20 @@
+# Data for exercise 4.4 from OptCombAII
+
+data;
+
+set POSTES := 
+11
+22;
+
+set INTERIMAIRES :=
+AA
+BB;
+
+param cout: 11 22 :=
+AA 940 740
+BB 10 100;
+
+
+end;
+
+
